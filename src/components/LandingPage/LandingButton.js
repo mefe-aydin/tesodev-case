@@ -1,9 +1,9 @@
 import React from 'react';
 
-const LandingButton = ({ onClick }) => {
+const LandingButton = ({ title, onClick }) => {
   return (
     <div className="button-container" onClick={onClick}>
-      <span className="title">Search</span>
+      <span className="title">{title}</span>
     </div>
   );
 };
