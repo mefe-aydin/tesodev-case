@@ -12,6 +12,10 @@ function LandingPage() {
   const history = useHistory();
   let elementNumber;
 
+  const handleClick = () => {
+    history.push('/listpage');
+  };
+
   return (
     <div className="landing-container">
       <LandingImage />
@@ -58,13 +62,7 @@ function LandingPage() {
             })}
           <div className="show-more">
             {elementNumber >= 3 ? (
-              <LandingButton
-                onClick={() => {
-                  history.push('/listpage');
-                }}
-                component={listpage}
-                title="Show More"
-              />
+              <LandingButton onClick={handleClick} component={listpage} title="Show More" />
             ) : (
               ''
             )}
