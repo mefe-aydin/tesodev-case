@@ -77,6 +77,15 @@ function ListPage() {
         );
       }
       console.log(sorted);
+      sorted.map((val, index) => {
+        return (
+          <div className="search-result" key={index}>
+            <p className="result-country-city"> {`${val[4]}- ${val[5]}`} </p>
+            <p className="result-email"> {`Email: ${val[2]}`} </p>
+            <p className="result-name-year"> {`${val[0]} - ${val[3]}`} </p> <hr />
+          </div>
+        );
+      });
       setOrderByData(sorted);
     };
 
