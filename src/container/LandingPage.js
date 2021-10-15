@@ -25,17 +25,17 @@ function LandingPage() {
         onChange={(event) => {
           setSearchTerm(event.target.value);
         }}
-      />{' '}
+      />
       <LandingButton
         onClick={() => {
           history.push('/listpage');
         }}
         component={listpage}
         title="Search"
-      />{' '}
+      />
+
       {searchTerm ? (
         <div className="search-result-container">
-          {' '}
           {data
             .filter((val) => {
               if (searchTerm === '') {
@@ -55,24 +55,29 @@ function LandingPage() {
               elementNumber = index;
               return (
                 <div className="search-result" key={index}>
-                  <p className="result-country-city"> {`${val[4]}- ${val[5]}`} </p>{' '}
-                  <p className="result-email"> {`Email: ${val[2]}`} </p>{' '}
-                  <p className="result-name-year"> {`${val[0]} - ${val[3]}`} </p> <hr />
+                  <div className="result-left-area">
+                    <p className="result-country-city">{`${val[4]}- ${val[5]}`}</p>
+                    <p className="result-name-year"> {`${val[0]} - ${val[3].split('/')[2]}`} </p>
+                  </div>
+                  <div className="result-right-area">
+                    <p className="result-email"> {`Email: ${val[2]}`} </p>
+                  </div>
                 </div>
               );
-            })}{' '}
-          <div className="show-more">
-            {' '}
-            {elementNumber >= 3 ? (
-              <LandingButton onClick={handleClick} component={listpage} title="Show More" />
+            })}
+          <div className="show-more" onClick={handleClick} component={listpage}>
+            {elementNumber >= 2 ? (
+              <div>
+                <p>Show More</p>
+              </div>
             ) : (
               ''
-            )}{' '}
-          </div>{' '}
+            )}
+          </div>
         </div>
       ) : (
         ''
-      )}{' '}
+      )}
     </div>
   );
 }
