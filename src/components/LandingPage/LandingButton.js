@@ -1,9 +1,8 @@
-import './../../style/LandingButton.css';
 import React from 'react';
 
-const LandingButton = ({ title, onClick }) => {
+const LandingButton = ({ title, onClick, className }) => {
   return (
-    <div className="button-container" onClick={onClick}>
+    <div className={`${className}-button-container`} onClick={onClick}>
       <span className="search"> {title} </span>
     </div>
   );

@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from './../../tesodev.jpg';
 
-const LandingImage = () => {
+const LandingImage = ({ className }) => {
   return (
-    <div className="image-container">
+    <div className={`${className}-image-container`}>
       <img src={logo} alt="tesodev" />
     </div>
   );

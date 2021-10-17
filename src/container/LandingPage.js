@@ -18,8 +18,9 @@ function LandingPage() {
 
   return (
     <div className="landing-container">
-      <LandingImage />
+      <LandingImage className="landing" />
       <LandingInput
+        className="landing"
         type="text"
         placeholder="search"
         onChange={(event) => {
@@ -27,6 +28,7 @@ function LandingPage() {
         }}
       />
       <LandingButton
+        className="landing"
         onClick={() => {
           history.push('/listpage');
         }}

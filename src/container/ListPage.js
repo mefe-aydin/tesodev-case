@@ -10,7 +10,7 @@ function ListPage() {
   const [sortType, setSortType] = useState('nameAscending');
 
   const onClickHandler = () => {
-    const inputValue = document.getElementsByClassName('input')[0].value;
+    const inputValue = document.getElementsByClassName('listpage-input')[0].value;
     setSearchTerm(inputValue);
   };
 
@@ -42,15 +42,18 @@ function ListPage() {
         (a, b) => new Date(b[3].split('/').reverse()) - new Date(a[3].split('/').reverse()),
       );
     }
-    console.log(sorted);
     return (
-      <div className="search-result-container">
+      <div className="result-container">
         {sorted.map((val, index) => {
           return (
-            <div className="search-result" key={index}>
-              <p className="result-country-city"> {`${val[4]}- ${val[5]}`} </p>
-              <p className="result-email"> {`Email: ${val[2]}`} </p>
-              <p className="result-name-year"> {`${val[0]} - ${val[3]}`} </p>
+            <div className="result" key={index}>
+              <div className="left-area">
+                <p className="country-city"> {`${val[4]}- ${val[5]}`} </p>
+                <p className="name-year"> {`${val[0]} - ${val[3]}`} </p>
+              </div>
+              <div className="right-area">
+                <p className="email"> {`Email: ${val[2]}`} </p>
+              </div>
             </div>
           );
         })}
@@ -59,16 +62,18 @@ function ListPage() {
   };
   return (
     <div className="listpage-container">
-      <LandingImage />
-      <LandingInput type="text" placeholder="search" />
-      <LandingButton onClick={onClickHandler} title="Search" />
-      <select className="orderByData" onChange={(e) => setSortType(e.target.value)}>
-        <option>Order By</option>
-        <option value="nameAscending">Name ascending</option>
-        <option value="nameDescending">Name descending</option>
-        <option value="yearAscending">Year ascending</option>
-        <option value="yearDescending">Year descending</option>
-      </select>
+      <LandingImage className="listpage" />
+      <LandingInput className="listpage" type="text" placeholder="search" />
+      <LandingButton className="listpage" onClick={onClickHandler} title="Search" />
+      <div className="listpage-order-by-data">
+        <select className="orderByData" onChange={(e) => setSortType(e.target.value)}>
+          <option> Order By </option> <option value="nameAscending"> Name ascending </option>
+          <option value="nameDescending"> Name descending </option>
+          <option value="yearAscending"> Year ascending </option>
+          <option value="yearDescending"> Year descending </option>
+        </select>
+      </div>
+
       {sortData(sortType)}
     </div>
   );

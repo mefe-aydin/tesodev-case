@@ -1,10 +1,14 @@
-import './../../style/LandingInput.css';
 import React from 'react';
 
-const LandingInput = ({ onChange }) => {
+const LandingInput = ({ onChange, className }) => {
   return (
-    <div className="input-container">
-      <input className="input" type="text" placeholder="Search" onChange={onChange} />
+    <div className={`${className}-input-container`}>
+      <input
+        className={`${className}-input`}
+        type="text"
+        placeholder="Search"
+        onChange={onChange}
+      />
     </div>
   );
 };
