@@ -67,15 +67,13 @@ function LandingPage() {
                 </div>
               );
             })}
-          <div className="show-more" onClick={handleClick} component={listpage}>
-            {elementNumber >= 2 ? (
-              <div>
-                <p>Show More</p>
-              </div>
-            ) : (
-              ''
-            )}
-          </div>
+          {elementNumber >= 2 ? (
+            <div className="show-more" onClick={handleClick} component={listpage}>
+              <p>Show More</p>
+            </div>
+          ) : (
+            ''
+          )}
         </div>
       ) : (
         ''

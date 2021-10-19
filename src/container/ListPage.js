@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import LandingImage from '../components/LandingPage/LandingImage';
 import LandingInput from '../components/LandingPage/LandingInput';
 import LandingButton from '../components/LandingPage/LandingButton';
+import ListImage from '../components/ListPage/ListImage';
 import { data } from './../data/mockData.json';
+import sort from './../images/sort.png';
 
 function ListPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -66,14 +68,16 @@ function ListPage() {
       <LandingInput className="listpage" type="text" placeholder="search" />
       <LandingButton className="listpage" onClick={onClickHandler} title="Search" />
       <div className="listpage-order-by-data">
-        <select className="orderByData" onChange={(e) => setSortType(e.target.value)}>
-          <option> Order By </option> <option value="nameAscending"> Name ascending </option>
-          <option value="nameDescending"> Name descending </option>
-          <option value="yearAscending"> Year ascending </option>
-          <option value="yearDescending"> Year descending </option>
-        </select>
+        <ListImage className="listpage" />
+        <div className="select-container">
+          <select className="orderByData" onChange={(e) => setSortType(e.target.value)}>
+            <option> Order By </option> <option value="nameAscending"> Name ascending </option>
+            <option value="nameDescending"> Name descending </option>
+            <option value="yearAscending"> Year ascending </option>
+            <option value="yearDescending"> Year descending </option>
+          </select>
+        </div>
       </div>
-
       {sortData(sortType)}
     </div>
   );

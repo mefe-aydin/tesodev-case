@@ -50,12 +50,9 @@
 }
 
 .result-container {
-    width: 602px;
+    width: 636px;
     position: absolute;
-    border: 1px solid #606060;
-    border-radius: 5px;
-    margin: 120px 16px 18px 286px;
-    padding: 12px 0;
+    margin: 120px 16px 18px 270px;
 }
 
 .result {
@@ -68,6 +65,11 @@
     padding: 12px 0;
 }
 
+.result:hover {
+    background-color: #c4c4c4;
+    cursor: pointer;
+}
+
 .left-area {
     display: flex;
     flex: 1 1;
@@ -76,6 +78,7 @@
 }
 
 .listpage-order-by-data {
+    display: flex;
     position: absolute;
     margin: 90px 0px 0px 756px;
 }
@@ -84,4 +87,13 @@
     margin-top: 10px;
     color: #5a5858;
     font-size: 16px;
+}
+
+.sort-logo {
+    width: 32px;
+    height: 32px;
+}
+
+.select-container {
+    margin-top: 3px;
 }

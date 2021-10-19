@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './../../images/tesodev.jpg';
+import logo from './../../images/sort.png';
 
-const LandingImage = ({ className }) => {
+const ListImage = ({ className }) => {
   return (
     <div className={`${className}-image-container`}>
       <img src={logo} alt="tesodev" />
@@ -9,4 +9,4 @@ const LandingImage = ({ className }) => {
   );
 };
 
-export default LandingImage;
+export default ListImage;
